@@ -1,0 +1,28 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+<div class="bk-feature">
+	{{widget('feature', 'featurehome', {"header": "profile", "strapline":"profile", "buttonText":"Lorem Ipsum","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '50','showBtn': true, 'align':'justifycenter'})|raw}}
+</div>
+
+<header class="bk-header">
+	<div class="contain">
+		<div class="brand">
+			{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png'),"showTplWidget":"0"})|raw}}
+			{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+		</div><!--end brand-->
+		<nav class="bk-nav">
+			{{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
+		</nav>
+	</div><!--end contain-->
+</header>
+
+<div role="main">
+	<div class="contain">
+		{{zone('main')|raw}}
+	</div><!--end contain-->
+</div><!--end main-->
+
+{% include 'includes/footer.twig' %}
+
+{% endblock %}
