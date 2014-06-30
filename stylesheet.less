@@ -365,16 +365,19 @@
 		.contain {
 			padding: 12px 40px;
 		}
-		.widget.profile {
-			display: block;
-			margin-right: 5%;
+		.widget.profile, .widget.socialicons {
+			display: inline-block;
+			margin-right: -4px;
+			margin-left: 5%;
 			width: 45%;
 			color: @font-swatch5-color;
-			padding: 30px 0;
-			text-align: center;
-			&:last-child {
-				margin-right: 0;
+			text-align: left;
+			&:first-child {
+				margin-left: 0;
 			}
+		}
+		.widget.socialicons {
+			text-align: right;
 		}
 	}
 }
@@ -485,8 +488,8 @@
         margin: 2em 0 2.5em;
         text-align: center;
         h1 {
-        	font-size: bkscale(@font-swatch1-font-size, 0.7);
-        	line-height: bkscale(@font-swatch1-line-height, 0.7);
+        	font-size: bkscale(@font-swatch1-font-size, 0.9);
+        	line-height: bkscale(@font-swatch1-line-height, 0.9);
             padding-bottom: 6px;
         }
         p {
@@ -519,8 +522,7 @@
         line-height: @font-swatch5-line-height;
     }
     .menu-section-item-dietary-props .dietary-icon {
-        background: lighten(@font-swatch5-color, 55%);
-        .border-radius(6px);
+        background: fade(@color-swatch5, 15%);
         font-size: bkscale(@font-swatch5-font-size, 0.82);
         padding: 4px 10px;
         margin-top: 15px;
@@ -541,9 +543,6 @@
                 margin-bottom: 0;
             }
         }
-        .menu-section-item-dietary-props .dietary-icon {
-            
-        }
     }
     .menu-subsection-name {
         color: @font-swatch2-color;
@@ -560,7 +559,6 @@
 /* 9. Ecommerce */
 
 .widget.ecombasket .ecombasket-pull {
-	.border-radius(6px);
 	p {
 		font-family: @font-swatch7-font-family;
 		font-size: @font-swatch7-font-size;
@@ -589,7 +587,6 @@
 			button {
 				position: relative;
 				left: -9px;
-				top: 1px;
 			}
 		}
 	}
@@ -626,6 +623,7 @@
 		border: 1px solid darken(@color-swatch7, 2%);
         padding: 4px 35px 4px 12px;
         background: image('/images/arrow-dropdown.png') 95% center no-repeat, @color-swatch7;
+        .border-radius(0px);
         @media @tablet {
         	background-position: 98% center;
         	margin-left: 0;
@@ -688,8 +686,11 @@
 }
 
 .ecom-productslist-title, .ecom-featuredproducts-title, .ecom-product-title {
-	font-size: bkscale(@font-swatch2-font-size, 0.65);
-	line-height: bkscale(@font-swatch2-line-height, 0.8);
+	font-size: bkscale(@font-swatch2-font-size, 0.8);
+	line-height: bkscale(@font-swatch2-line-height, 0.9);
+}
+
+.ecom-productslist-title, .ecom-featuredproducts-title {
 	margin-top: 20px;
 }
 
@@ -787,7 +788,7 @@ textarea {
             button {
                 position: relative;
                 left: -4px;
-                top: 2px;
+                top: 1px;
             }
             fieldset input {
                 border: 1px solid darken(@color-swatch7, 2%);
@@ -801,7 +802,7 @@ textarea {
         button {
             width: 85px;
             position: relative;
-            top: 2px;
+            top: 1px;
         }
         input {
             border: 1px solid darken(@color-swatch7, 2%);
@@ -834,7 +835,6 @@ textarea {
             text-decoration: none;
             position: relative;
             width: 85px;
-            top: 1px;
             &:hover {
             	background-color: @font-swatch7-background-color-hover;
             }
@@ -1018,22 +1018,29 @@ hr.line {
 }
 
 .widget.socialicons, .widget.profile .bk-profile-socialicons {
-	margin: 2em 0 1em;
+	margin: 1em 0;
     span a {
 		background-color: transparent;
-		background-size: 45px;
-		height: 45px;
-		width: 45px;
-		&:hover{
+		background-size: 38px;
+		height: 38px;
+		margin-bottom: 0;
+		width: 38px;
+		&:hover {
 			background-color: transparent;
-			.transition(all, .5s, ease);
+			background-size: 38px;
+			height: 38px;
+			width: 38px;
 		}
 	}
 }
 
 .widget.profile .bk-profile-socialicons span a {
-	height: 45px;
-	width: 45px;
+	height: 38px;
+	width: 38px;
+	&:hover {
+		height: 38px;
+		width: 38px;
+	}
 }
 
 .bk-socialicons-linkedin {
