@@ -43,6 +43,7 @@
 	position: absolute;
 	top: 0;
 	width: 100%;
+	z-index: 9999;
 	.contain {
 		padding-top: 55px;
 		@media @tablet {
@@ -62,7 +63,7 @@
 	}
 	nav {
 		margin-left: 5%;
-		width: 65%;
+		width: 64%;
 		@media @tablet {
 			margin-left: 0;
 			width: 100%;
@@ -144,7 +145,7 @@
 		  			background: @color-swatch6;
 		  			right: 0;
 		  			width: 100%;
-		  			top: 30px;
+		  			top: 47px;
 		  		}
 		  		li {
 		  			border-bottom: 1px solid darken(@color-swatch1, 75%);
@@ -254,14 +255,19 @@
 /* 4. Feature */
 
 .widget.feature .feature-bgimg {
-	height: 700px;
+	height: 650px;
+	@media @mobile {
+		eight: 400px;
+	}
 	.content {
 		background-color: fade(black, 40%);
 		padding: 0 40px;
-		height: 700px;
+		height: 650px;
+		overflow: hidden;
 		text-align: left;
 		@media @mobile {
 			padding: 0 20px;
+			height: 400px;
 		}
 		&:after {
 			background-color: rgba(0, 0, 0, 0.65);
@@ -278,6 +284,7 @@
 			-webkit-transform: skewX(-15deg);
 			transform: skewX(-15deg);
 			margin: 0 0 0 -95px;
+			overflow: hidden;
 			@media @tablet {
 				background-color: rgba(0, 0, 0, 0.25);
 				margin: 0;
@@ -303,20 +310,8 @@
 			padding: 0 30px;
 			position: relative;
 			z-index: 1;
-			@media only screen and (max-height: 450px) {
-				h2 {
-					font-size: bkscale(@font-swatch1-font-size, 0.62);
-					line-height: bkscale(@font-swatch1-line-height, 0.68);
-					padding-bottom: 8px;
-				}
-				h3 {
-					font-size: bkscale(@font-swatch5-font-size, 0.95);
-					line-height: bkscale(@font-swatch5-line-height, 1.05);
-				}
-				button {
-					padding: 8px 15px;
-					margin-top: 12px;
-				}
+			@media @mobile {
+				padding: 0;
 			}
 		}
 		h2 {
@@ -369,6 +364,7 @@
 				transform: skewX(-15deg);
 				-webkit-transition: -webkit-transform 0.3s;
 				-moz-transition: -moz-transform 0.3s;
+				overflow: visible;
 			}
 			&:hover {
 				transition: all .75s ease;
@@ -428,6 +424,9 @@
 				padding: 40px 40px 20px;
 			}
 		}
+		.widget {
+			margin-bottom: 0;
+		}
 		.widget.profile, .widget.socialicons {
 			display: inline-block;
 			margin-right: -4px;
@@ -443,6 +442,7 @@
 			}
 			&:first-child {
 				margin-left: 0;
+				vertical-align: middle;
 			}
 		}
 		.widget.socialicons {
@@ -676,6 +676,11 @@
 			button {
 				position: relative;
 				left: -9px;
+				@media @mobile {
+					left: 0;
+					margin-top: 10px;
+					width: 100%;
+				}
 			}
 		}
 	}
@@ -884,11 +889,16 @@ textarea {
                 position: relative;
                 left: -4px;
                 top: 1px;
+                @media @mobile {
+                	left: 0;
+                	margin-top: 10px;
+                	width: 100%;
+                }
             }
             fieldset input {
                 border: 1px solid darken(@color-swatch7, 2%);
                 @media @mobile {
-                	width: 65%;
+                	width: 100%;
                 }
             }
         }
@@ -898,6 +908,10 @@ textarea {
             width: 85px;
             position: relative;
             top: 1px;
+            @media @mobile {
+            	margin-top: 10px;
+            	width: 100%;
+            }
         }
         input {
             border: 1px solid darken(@color-swatch7, 2%);
@@ -916,6 +930,9 @@ textarea {
         input {
             border: 1px solid darken(@color-swatch7, 2%);
             width: auto;
+            @media @mobile {
+            	width: 100%;
+            }
         }
         button {
             background-color: @font-swatch7-background-color;
@@ -933,6 +950,10 @@ textarea {
             &:hover {
             	background-color: @font-swatch7-background-color-hover;
             }
+            @media @mobile {
+            	margin-top: 10px;
+            	width: 100%;
+            }
         }
     }
     &.button {
@@ -945,12 +966,13 @@ textarea {
 /* 11. Misc Elements */
 
 .widget.responsiveslideshow {
+		&.responsiveslideshow {
+		background-color: transparent;
 		margin-top: 20px;
 		.slideshow-widget-wrapper {
 		}
 		.slideshow-widget-controls {
 			.dot {
-				background-color: fade(@color-swatch1, 65%);
 				.border-radius(100px);
 				&.selected {
 					background-color: @color-swatch3;
@@ -959,7 +981,7 @@ textarea {
 		}
 		.content-wrapper {
 			background-color: fade(@color-swatch1, 75%);
-			bottom: 15px;
+			top: initial;
 			display: inline-block;
 			min-height: 50px;
 			height: auto;
@@ -967,11 +989,10 @@ textarea {
 			left: 15px;
 			right: auto;
 			max-width: 80%;
+			bottom: 15px;
 			@media @mobile {
 				display: block;
-				bottom: initial;
 				height: initial;
-				top: 0;
 			}
 			span {
 				color: @color-swatch5;
@@ -1014,13 +1035,13 @@ textarea {
 			}
 			.btn-prev, .btn-next {
 				background-color: fade(@color-swatch1, 65%);
-				bottom: 15px;
+				top: 15px;
 				font-family: @font-swatch7-font-family;
 				font-size: bkscale(@font-swatch3-font-size, 1.4);
 				font-weight: @font-swatch5-font-weight;
 				height: 50px;
 				width: 55px;
-				top: inherit;
+				bottom: inherit;
 				text-indent: 1000px;
 				overflow: hidden;
 				.transition(all .5s ease);
@@ -1063,6 +1084,7 @@ textarea {
 		.slideshow-image-list {
 		}
 	}
+}
 
 h5 {
 	background-color: @color-swatch3;
@@ -1104,6 +1126,28 @@ hr.line {
 .widget.gallery ul li span.inner .title {
 	bottom: -50px;
 	opacity: 0;
+	z-index: 1;
+}
+
+.widget.gallery ul li span.inner:hover .description {
+    -webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+.widget.gallery ul li span.inner:hover .description {
+	display: block;
+	top: 0;
+	background: rgba(0,0,0, 0.25);
+	-webkit-transition: all .5s ease-in;  
+	-moz-transition:    all .5s ease-in;  
+	-ms-transition:     all .5s ease-in;  
+	-o-transition:      all .5s ease-in;  
+	transition: 		all .5s ease-in;  
+	@media @mobile {
+		display: none;
+	}
 }
 
 .widget.gallery ul li span.inner a:hover .title {
