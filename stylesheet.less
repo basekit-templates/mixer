@@ -64,6 +64,7 @@
 		margin-left: 5%;
 		width: 65%;
 		@media @tablet {
+			margin-left: 0;
 			width: 100%;
 		}
 	}
@@ -87,7 +88,6 @@
 
 .widget.extendednavigation {
 	@media @tablet {
-		right: 35px;
 		z-index: 9999;
 	}
 	ul {
@@ -100,6 +100,7 @@
 			margin-bottom: 0;
 		}
 		li {
+			line-height: @font-swatch6-line-height;
 			@media @tablet {
 				border-bottom: 1px solid darken(@color-swatch1, 75%);
 				padding: 14px 20px;
@@ -203,10 +204,9 @@
 	.border-radius(4px);
 	padding: 11px 9px 0;
 	position: absolute;
-	top: -60px; 
+	top: -50px; 
 	width: 42px;
 	height: 38px;
-	text-indent: -900em;
 	overflow: hidden;
 	cursor: pointer;
 	outline: none;
@@ -267,7 +267,7 @@
 			background-color: rgba(0, 0, 0, 0.65);
 			content: "";
 			position: absolute;
-			width: 54%;
+			width: 58%;
 			display: block;
 			top: 0;
 			left: 0;
@@ -424,6 +424,9 @@
 	.copyright {
 		.contain {
 			padding: 12px 40px;
+			@media @mobile {
+				padding: 40px 40px 20px;
+			}
 		}
 		.widget.profile, .widget.socialicons {
 			display: inline-block;
@@ -432,12 +435,23 @@
 			width: 45%;
 			color: @font-swatch5-color;
 			text-align: left;
+			@media @mobile {
+				display: block;
+				margin-left: 0;
+				width: 100%;
+				text-align: center;
+			}
 			&:first-child {
 				margin-left: 0;
 			}
 		}
 		.widget.socialicons {
 			text-align: right;
+			@media @mobile {
+				display: block;
+				width: 100%;
+				text-align: center;
+			}
 		}
 	}
 }
@@ -482,6 +496,9 @@
     .blog-post-date {
         color: @font-swatch5-color;
     }
+    .blog-post-item {
+    	margin: 1.5em 0;
+    }
 }
 
 .blog-list-footer {
@@ -503,6 +520,19 @@
 .blogsearch {
 	label {
 		display: block;
+	}
+}
+
+.blog-post-sharing {
+	margin-top: 20px;
+	.btn.facebook {
+		background-color: #3B5998;
+	}
+	.btn.twitter {
+		background-color: #00ACED;
+	}
+	.btn.googleplus {
+		background-color: #dd4b39;
 	}
 }
 
@@ -635,7 +665,7 @@
 			}
 			input.productlist-search {
 				@media @mobile {
-					width: 65%;
+					width: auto;
 				}
 			}
 			label:after {
@@ -677,7 +707,7 @@
     select {
     	color: lighten(@font-swatch5-color, 15%);
         font-size: bkscale(@font-swatch7-font-size, 0.85);
-        height: 50px;
+        min-height: 50px;
         margin-left: 6px;
         -webkit-appearance: none;
 		border: 1px solid darken(@color-swatch7, 2%);
@@ -730,19 +760,23 @@
 	h3 {
 		padding-bottom: 25px;
 	}
-	input, textarea {
-	}
 	select {
 		color: lighten(@font-swatch5-color, 15%);
-	    font-size: bkscale(@font-swatch7-font-size, 0.85);
+		font-size: @font-swatch5-font-size;
 	    -webkit-border-radius: 0;
 	    border-radius: 0;
-	    height: 50px;
+	    min-height: 50px;
 	    -webkit-appearance: none;
 		border: 1px solid darken(@color-swatch7, 2%);
 		text-indent: 8px;;
 	    padding: 4px 35px 4px 12px;
+	    height: 50px;
 	}
+}
+
+.checkout-legal-links {
+	list-style: none;
+	padding-left: 0;
 }
 
 .ecom-productslist-title, .ecom-featuredproducts-title, .ecom-product-title {
@@ -794,7 +828,7 @@ input, textarea {
 
 input {
 	@media @mobile {
-		width: 65%;
+		width: 100%;
 	}
 }
 
@@ -804,7 +838,7 @@ button:hover, button.btn:hover, .widget.tweet a:hover, .widget.button.paypal:hov
 
 input, .widget.profile form fieldset input, .widget.tweet a, .widget.ecombasket .ecombasket-pull, .widget.paypalbuynow .widget.button.paypal, button {
 	line-height: 25px;
-	height: 50px;
+	min-height: 50px;
 }
 
 input.blog-search-input, .widget.signupform input, .widget.profile form fieldset input {
@@ -836,7 +870,7 @@ textarea {
             border: 1px solid darken(@color-swatch7, 2%);
             &.email {
                 @media @mobile {
-                    width: 70%;
+                    width: 100%;
                 }
             }
         }
@@ -867,13 +901,13 @@ textarea {
         }
         input {
             border: 1px solid darken(@color-swatch7, 2%);
-            height: 50px;
+            min-height: 50px;
             width: 50%;
             @media @tablet {
                 width: 65%;
             }
             @media @mobile {
-                width: 70%;
+                width: 100%;
             }
         }
     }
@@ -881,7 +915,7 @@ textarea {
         margin: 10px 0;
         input {
             border: 1px solid darken(@color-swatch7, 2%);
-            width: 65%;
+            width: auto;
         }
         button {
             background-color: @font-swatch7-background-color;
@@ -911,7 +945,6 @@ textarea {
 /* 11. Misc Elements */
 
 .widget.responsiveslideshow {
-		background-color: gainsboro;
 		margin-top: 20px;
 		.slideshow-widget-wrapper {
 		}
