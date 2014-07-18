@@ -257,6 +257,9 @@
 
 .widget.feature .feature-bgimg {
 	height: 650px;
+	@media only screen and (max-height: 420px) {
+		height: 450px;
+	}
 	@media @mobile {
 		height: 450px;
 	}
@@ -266,6 +269,9 @@
 		height: 650px;
 		overflow: hidden;
 		text-align: left;
+		@media only screen and (max-height: 420px) {
+			height: 450px;
+		}
 		@media @mobile {
 			padding: 0 20px;
 			height: 450px;
@@ -311,6 +317,10 @@
 			padding: 0 30px;
 			position: relative;
 			z-index: 1;
+			@media only screen and (max-height: 420px) {
+				margin: 40px auto 0;
+				padding: 0;
+			}
 			@media @mobile {
 				padding: 0;
 			}
@@ -322,12 +332,12 @@
 			line-height: bkscale(@font-swatch1-line-height, 1.15);
 			padding-bottom: 4px;
 			@media @mobile {
-				font-size: bkscale(@font-swatch1-font-size, 0.72);
-				line-height: bkscale(@font-swatch1-line-height, 0.78);
+				font-size: bkscale(@font-swatch1-font-size, 0.65);
+				line-height: bkscale(@font-swatch1-line-height, 0.72);
 			}
 			@media only screen and (max-height: 420px) {
-				font-size: bkscale(@font-swatch1-font-size, 0.7);
-				line-height: bkscale(@font-swatch1-line-height, 0.75);
+				font-size: bkscale(@font-swatch1-font-size, 0.65);
+				line-height: bkscale(@font-swatch1-line-height, 0.7);
 			}
 		}
 		h3 {
@@ -425,7 +435,7 @@
     }
     .contain {
     	padding-top: 30px;
-	    padding-bottom: 30px;
+	    padding-bottom: 20px;
 	}
     .socialicons {
         display: inline-block;
@@ -1157,11 +1167,8 @@ hr.line {
 	z-index: 1;
 }
 
-.widget.gallery ul li span.inner:hover .description {
-    -webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
-	-o-transition: all 0.3s ease-out;
-	transition: all 0.3s ease-out;
+.widget.gallery ul li span.inner .description {
+	line-height: @font-swatch5-line-height;
 }
 
 .widget.gallery ul li span.inner:hover .description {
