@@ -47,6 +47,7 @@
 	.contain {
 		padding-top: 55px;
 		@media @tablet {
+			padding-top: 35px;
 			padding-bottom: 10px;
 		}
 	}
@@ -58,12 +59,12 @@
 		margin-right: -4px;
 		width: 30%;
 		@media @tablet {
-			width: 90%;
+			width: 85%;
 		}
 	}
 	nav {
-		margin-left: 5%;
-		width: 64%;
+		margin-left: 3%;
+		width: 66%;
 		@media @tablet {
 			margin-left: 0;
 			width: 100%;
@@ -135,10 +136,10 @@
 		  		}
 		  	}
 		  	&:hover ul {
-		  		background-color: fade(@color-swatch6, 90%);
+		  		background-color: fade(@color-swatch6, 95%);
 		  		margin-left: 20px;
 		  		min-width: 80px;
-		  		top: 25px;
+		  		top: 28px;
 		  		.transition(all, .5s, ease);
 		  		width: auto;
 		  		@media @tablet {
@@ -150,7 +151,7 @@
 		  		li {
 		  			border-bottom: 1px solid darken(@color-swatch1, 75%);
 		  			margin-bottom: 0;
-		  			padding: 12px 15px;
+		  			padding: 8px 15px;
 		  			@media @tablet {
 		  				padding: 15px 50px 11px 0;
 		  			}
@@ -201,7 +202,7 @@
 }
 
 .widget .extendednavigation a.pull {
-	background-color: @color-swatch3;
+	border: 2px solid @color-swatch3;
 	.border-radius(4px);
 	padding: 11px 9px 0;
 	position: absolute;
@@ -228,8 +229,8 @@
 		height: 2px;
 		background: @color-swatch1;
 		box-shadow: 0 6px 0 @color-swatch1, 0 12px 0 @color-swatch1;
-		top: 12px;
-		left: 10px;
+		top: 10px;
+		left: 8px;
 	}
 }
 
@@ -257,7 +258,7 @@
 .widget.feature .feature-bgimg {
 	height: 650px;
 	@media @mobile {
-		eight: 400px;
+		height: 450px;
 	}
 	.content {
 		background-color: fade(black, 40%);
@@ -267,13 +268,13 @@
 		text-align: left;
 		@media @mobile {
 			padding: 0 20px;
-			height: 400px;
+			height: 450px;
 		}
 		&:after {
 			background-color: rgba(0, 0, 0, 0.65);
 			content: "";
 			position: absolute;
-			width: 58%;
+			width: 55%;
 			display: block;
 			top: 0;
 			left: 0;
@@ -337,7 +338,7 @@
 			line-height: bkscale(@font-swatch5-line-height, 1.1);
 		}
 		h2, h3 {
-			max-width: 50%;
+			max-width: 48%;
 			@media @tablet {
 				max-width: 100%;
 			}
@@ -350,6 +351,7 @@
 			padding: 0.75em 2em 0.5em;
 			color: @font-swatch7-color;
 			cursor: pointer;
+			overflow: visible;
 			&:before, &:after {
 				content: "";
 				position: absolute;
@@ -416,44 +418,50 @@
 /* 6. Footer */
 
 .bk-footer {
-	background-color: @color-swatch6;
-	.copyright {
-		.contain {
-			padding: 12px 40px;
-			@media @mobile {
-				padding: 40px 40px 20px;
-			}
-		}
-		.widget {
-			margin-bottom: 0;
-		}
-		.widget.profile, .widget.socialicons {
-			display: inline-block;
-			margin-right: -4px;
-			margin-left: 5%;
-			width: 45%;
-			color: @font-swatch5-color;
-			text-align: left;
-			@media @mobile {
-				display: block;
-				margin-left: 0;
-				width: 100%;
-				text-align: center;
-			}
-			&:first-child {
-				margin-left: 0;
-				vertical-align: middle;
-			}
-		}
-		.widget.socialicons {
-			text-align: right;
-			@media @mobile {
-				display: block;
-				width: 100%;
-				text-align: center;
-			}
-		}
+    background-color: @color-swatch2;
+    margin-top: 20px;
+    @media @tablet {
+        margin-top: 30px;
+    }
+    .contain {
+    	padding-top: 30px;
+	    padding-bottom: 30px;
 	}
+    .socialicons {
+        display: inline-block;
+        margin: 0.75em 0 0;
+        text-align: right;
+        width: 49.5%;
+        @media @mobile {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        span a {
+            background-color: fade(@color-swatch6, 15%);
+            margin-bottom: 0;
+            margin-top: 0;
+            &:hover {
+                background-color: fade(@color-swatch6, 25%);
+            }
+        }
+    }
+    .widget {
+        &.profile {
+            display: inline-block;
+            padding-top: 18px;
+            width: 49.5%;
+            vertical-align: top;
+            @media @mobile {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            p, span {
+                color: lighten(@color-swatch4, 20%);
+            }
+        }
+    }
 }
 
 /* 7. Blog */
@@ -676,6 +684,7 @@
 			button {
 				position: relative;
 				left: -9px;
+				vertical-align: top;
 				@media @mobile {
 					left: 0;
 					margin-top: 10px;
@@ -702,6 +711,7 @@
 	    	padding-bottom: 5px;
 	    }
 	    span {
+	    	color: @font-swatch3-color;
 	    	font-size: @font-swatch3-font-size;
 	    	line-height: @font-swatch3-line-height;
 	    }
@@ -711,7 +721,7 @@
 .productlist-display-form, .productlist-item-count, .widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation { 
     select {
     	color: lighten(@font-swatch5-color, 15%);
-        font-size: bkscale(@font-swatch7-font-size, 0.85);
+        font-size: bkscale(@font-swatch5-font-size, 0.9);
         min-height: 50px;
         margin-left: 6px;
         -webkit-appearance: none;
@@ -825,6 +835,9 @@ input, textarea {
 	background-color: @color-swatch7;
 	border: 1px solid darken(@color-swatch7, 2%);
 	text-indent: 8px;
+	@media @mobile {
+		font-size: bkscale(@font-swatch5-font-size, 0.9);
+	}
 	&:hover, &:focus {
 		border: 1px solid darken(@color-swatch7, 10%)!important;
 		transition: ease .5s border!important;
@@ -837,6 +850,16 @@ input {
 	}
 }
 
+.ecom-product-go-to-checkout-btn {
+	font-family: @font-swatch7-font-family;
+	line-height: @font-swatch7-line-height;
+	font-size: @font-swatch7-font-size;
+	font-weight: @font-swatch7-font-weight;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 button:hover, button.btn:hover, .widget.tweet a:hover, .widget.button.paypal:hover, .widget.blogsearch button:hover, .widget.ecomproduct .ecom-product .btn:hover, .widget.ecombasket .ecombasket-pull:hover {
 	.transition(all, 0.5s, ease);
 }
@@ -844,6 +867,10 @@ button:hover, button.btn:hover, .widget.tweet a:hover, .widget.button.paypal:hov
 input, .widget.profile form fieldset input, .widget.tweet a, .widget.ecombasket .ecombasket-pull, .widget.paypalbuynow .widget.button.paypal, button {
 	line-height: 25px;
 	min-height: 50px;
+	@media @mobile {
+		line-height: 23px;
+		min-height: 45px;
+	}
 }
 
 input.blog-search-input, .widget.signupform input, .widget.profile form fieldset input {
@@ -851,6 +878,7 @@ input.blog-search-input, .widget.signupform input, .widget.profile form fieldset
 }
 
 button.blog-search-submit-button, .widget.signupform button, .widget.profile button {
+	vertical-align: top;
 }
 
 .widget.paypalbuynow .widget.button.paypal:hover {
@@ -888,7 +916,7 @@ textarea {
             button {
                 position: relative;
                 left: -4px;
-                top: 1px;
+                vertical-align: top;
                 @media @mobile {
                 	left: 0;
                 	margin-top: 10px;
@@ -907,7 +935,7 @@ textarea {
         button {
             width: 85px;
             position: relative;
-            top: 1px;
+            vertical-align: top;
             @media @mobile {
             	margin-top: 10px;
             	width: 100%;
@@ -943,10 +971,10 @@ textarea {
             color: @font-swatch7-color;
             letter-spacing: inherit;
             padding: 5px 10px;
-            margin: 1em 0;
             text-decoration: none;
             position: relative;
             width: 85px;
+            vertical-align: top;
             &:hover {
             	background-color: @font-swatch7-background-color-hover;
             }
@@ -1280,4 +1308,20 @@ hr.line {
 			}
 		}
 	}
+}
+
+select {
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    .border-radius(0);
+    cursor: pointer;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+}
+
+select::-ms-expand {
+    display: none;
 }
