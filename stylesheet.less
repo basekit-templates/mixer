@@ -82,7 +82,8 @@
 	&.companyname {
 		a {
 			@media @mobile {
-				font-size: bkscale(@font-swatch10-font-size, 0.96);
+				font-size: bkscale(@font-swatch10-font-size, 0.92);
+				line-height: bkscale(@font-swatch10-font-size, 1.2);
 			}
 		}
 	}
@@ -241,7 +242,8 @@
 		.contain {
 			padding-top: 45px;
 			@media @tablet {
-				padding-bottom: 10px;
+				padding-top: 35px;
+				padding-bottom: 0;
 			}
 		}
 	}
@@ -321,7 +323,7 @@
 				margin: 40px auto 0;
 				padding: 0;
 			}
-			@media @mobile {
+			@media @tablet {
 				padding: 0;
 			}
 		}
@@ -930,6 +932,9 @@ textarea {
         }
         button.btn {
         	margin-top: 10px;
+        	@media @mobile {
+        		width: 100%;
+        	}
         }
     }
     &.profile {
